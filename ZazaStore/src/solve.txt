@@ -1,0 +1,26 @@
+// Do this in console
+
+// Then add invalid product + RealZa
+fetch('/add-cart', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+        product: "InvalidProductXYZ",
+        quantity: 1
+    })
+}).then(r => r.json()).then(console.log);
+
+fetch('/add-cart', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+        product: "RealZa",
+        quantity: 1
+    })
+}).then(r => r.json()).then(console.log);
+
+fetch('/checkout', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    credentials: 'include'
+}).then(r => r.json()).then(console.log);
